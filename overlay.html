@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8"/>
 <meta name="viewport" content="width=device-width,initial-scale=1"/>
-<title>もるまさ OBSオーバーレイ</title>
+<title>あきお OBSオーバーレイ</title>
 <style>
 * { box-sizing: border-box; margin: 0; padding: 0; }
 body {
@@ -565,7 +565,7 @@ function esc(s) {
 
 // ─── Firebase Realtime Database リアルタイム同期 (compat版) ───
 const firebaseConfig = {
-  databaseURL: '' // ← 自分のFirebase databaseURLをここに貼り付けてください
+  databaseURL: 'https://molkky-score-78dd4-default-rtdb.asia-southeast1.firebasedatabase.app/' // ← 自分のFirebase databaseURLをここに貼り付けてください
 };
 firebase.initializeApp(firebaseConfig);
 firebase.database().ref('game').on('value', (snapshot) => {
