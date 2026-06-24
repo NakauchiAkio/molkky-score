@@ -247,7 +247,7 @@ function loadState() {
 function initTeams(names, keepSetStats) {
   return names.map((name, i) => ({
     id: i,
-    name: name || (i === 0 ? 'もるまさ' : i === 1 ? '相手' : i === 2 ? '相手２' : `相手${i + 1}`),
+    name: name || (i === 0 ? 'あきお' : i === 1 ? '相手' : i === 2 ? '相手２' : `相手${i + 1}`),
     colorIdx: i, // 固有カラーインデックス（常に初期位置で固定）
     score: 0,
     missStreak: 0,
@@ -472,7 +472,7 @@ function startGame() {
   const names = [];
   for (let i = 0; i < S.settings.teamCount; i++) {
     const el = document.getElementById(`team-name-${i}`);
-        names.push(el ? el.value.trim() : (i === 0 ? 'もるまさ' : i === 1 ? '相手' : i === 2 ? '相手２' : `相手${i + 1}`));
+        names.push(el ? el.value.trim() : (i === 0 ? 'あきお' : i === 1 ? '相手' : i === 2 ? '相手２' : `相手${i + 1}`));
   }
   const gname = document.getElementById('game-name');
   S.settings.gameName = gname ? gname.value.trim() : '';
@@ -620,9 +620,9 @@ function buildApp() {
   const isLive = S.phase === 'playing';
   return `
     <div class="page-header">
-      <img src="icon.png" alt="もるまさ"/>
+      <img src="icon.png" alt="あきお"/>
       <div>
-        <h1>もるまさスコア</h1>
+        <h1>あきおスコア</h1>
         <p>モルック スコア管理 &amp; ライブ配信</p>
       </div>
       ${isLive ? '<span class="live-badge">● LIVE</span>' : ''}
@@ -660,7 +660,7 @@ function buildSetup() {
     teamInputs += `
       <div class="team-row">
         <div class="team-color" style="background:${COLORS[i]};"></div>
-        <input type="text" id="team-name-${i}" placeholder="${i === 0 ? 'もるまさ' : i === 1 ? '相手' : i === 2 ? '相手２' : '相手' + (i + 1)}" value="${escHtml(prevName)}" maxlength="20"/>
+        <input type="text" id="team-name-${i}" placeholder="${i === 0 ? 'あきお' : i === 1 ? '相手' : i === 2 ? '相手２' : '相手' + (i + 1)}" value="${escHtml(prevName)}" maxlength="20"/>
       </div>`;
   }
 
